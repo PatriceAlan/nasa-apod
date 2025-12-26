@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../.env';
 
 interface ApodData {
   title: string;
@@ -28,7 +29,7 @@ export class App implements OnInit {
   error: string | null = null;
   
   private apiUrl = 'https://api.nasa.gov/planetary/apod';
-  private apiKey = 'EG0TopA09dXSn0dRSnaGl6iZsgdV3d9CqQ8JNTGY';
+  private apiKey = environment.nasaApiKey;
 
   constructor(private http: HttpClient) {}
 
